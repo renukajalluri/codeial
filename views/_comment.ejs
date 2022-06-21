@@ -1,0 +1,24 @@
+<li>
+    <p class="comment">Comments:</p>
+    <div class="name-content">
+        <i class="fa-solid fa-circle-user"></i>
+    <span class="user-name name"><%= comment.user.name %>:</span>
+    <span> <%= comment.content  %></span>
+ 
+<!-- if the user is signed in and  the user which is signed == user who created the comment.Then only
+delete button will display -->
+    <% if((locals.user) && (locals.user.id === comment.user.id)){ %>
+        <small>
+              <a href="/comments/destroy/<%= comment.id %>">X</a>
+          </small>
+               <%}%>
+
+               <% if (locals.user){ %>
+                <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
+                        <%= comment.likes.length %> Likes
+                </a>
+            <% }else{ %>
+                <%= comment.likes.length %> Likes
+            <% } %>
+</div>
+</li>

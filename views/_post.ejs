@@ -1,0 +1,50 @@
+<!--knowing the post_id  -->
+<li id="post-<%= post._id %>">
+    <!-- if the user is signed in and  the user which is signed == user who created the post.Then only
+    delete button will display -->
+    <!-- <% if(locals.user && locals.user.id === post.user.id){ %> -->
+       <small>
+             <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">Delete</a>
+         </small>
+              <!-- <%}%> -->
+
+   <small class="user-name">
+      Posted By <%= post.user.name %>
+   </small>
+   <% if(locals.user)  { %>
+      <!-- <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%= post._id %>&type=Post"> -->
+          <!-- <%= post.likes.length %> Likes -->
+      <!-- </a> -->
+    <%}else{%>
+        <!-- if user signed out it just shows a number -->
+            <%= post.likes.length %> Likes
+        <%}%>
+   <li class="post-content">
+       
+      
+       <%= post.content  %>
+       </li>
+     
+   
+  
+         
+   <div class="post-comments">
+       <% if(locals.user){ %>
+           <form action="/comments/create" method="post">
+               <input type="text" name="content" placeholder="Add comment... " autocomplete="off">
+               <input type="hidden" name="post" value="<%= post._id %>">
+               <input  id="comment-button" type="submit" value="Add ">
+
+           </form>
+           <% } %>
+           <div class="post-comments-list">
+                  <ul id="posts-comments-<%= post._id %>">
+                      <% for(comment of post.comments)  {%>
+                     <%- include('_comment') -%>
+                       <%}%> 
+                  </ul>
+           </div>
+
+   </div>
+  
+   </li>

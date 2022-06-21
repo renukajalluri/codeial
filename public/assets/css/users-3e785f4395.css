@@ -1,0 +1,8 @@
+.user-container {
+  display: grid;
+  margin-top: 30px; }
+  .user-container .name {
+    color: #a77a36;
+    font-size: 30px;
+    text-transform: capitalize;
+    margin-right: auto; }

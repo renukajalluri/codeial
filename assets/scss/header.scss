@@ -1,0 +1,56 @@
+.nav{
+   
+    background-color:antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    .title{
+       padding: 15px;
+       color: rgb(88, 81, 81);
+       font-size: 25px;
+        }
+    a{
+        text-decoration: none;
+        color: rgb(88, 81, 81);
+        }
+    a:hover{
+        color: rgb(197, 157, 157);
+    }
+    .in{
+        padding:15px;
+        font-size: 20px;
+        margin-left: auto;
+    }
+    .up{
+        padding: 15px;
+        font-size: 20px;
+     
+    }
+  .title-out{
+      margin-right: auto;
+      font-size: 25px;
+      padding: 15px;
+  }
+  
+  .user-name{
+      margin-left: auto;
+      text-transform: capitalize;
+      padding: 20px;
+      margin-left: 3px;
+      margin-top: -1px;
+      font-size: 20px;
+  }
+  .out{
+     font-size: 25px;
+     padding: 15px;
+  }
+  .out:hover{
+    transform: scale(0.98);
+  }
+  .in:hover{
+    transform: scale(0.98);
+  }
+  .up:hover{
+    transform: scale(0.98);
+  }
+    
+}

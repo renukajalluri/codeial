@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/users.css">
+  
+
+<img src="<%= user.avatar %>"  width="100">
+<!-- display a form when the user is viewing his/her own profile page -->
+<!--the user who want to see the profile page == the current user then only show the form -->
+<% if(user.id == profile_user.id) {%>
+  
+     <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="post">
+       <!-- value stores the inital value(current user data) -->
+       <input type="text" name="name" value="<%= profile_user.name %>" placeholder="Your Name" required autocomplete="off">
+       <input type="email" name="email" value="<%= profile_user.email %>" placeholder="Your Email" required autocomplete="off">
+       <input type="file" name="avatar" placeholder="Profile Picture">
+       <input type="submit"value="Update">
+     </form>
+
+  <!-- if the users are different show only profile info-->
+<%}else{%>
+
+ 
+  <div class="user-container">
+    <p class="name"><%= profile_user.name %></p>
+    <p class="email"><%= profile_user.email %></p>
+    </div>
+    <%}%>

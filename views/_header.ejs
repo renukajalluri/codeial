@@ -1,0 +1,41 @@
+
+<header>
+    <!-- Page Header -->
+
+    
+<div class="nav">
+    
+    <% if(locals.user){ %>
+        <div class="title-out">
+            <a href="/">CODEIAL</a>
+        </div>
+        <span>
+            <img src="<%= user.avatar %>"   width="80" srcset="">
+           </span>
+        <div class="user-name">
+            <!-- <i class="fa-solid fa-circle-user"></i> -->
+            <a href="/users/profile/<%= locals.user.id %>">
+               <%= user.name %></a>    
+        </div>
+        
+         <div class="out">
+             <a href="/users/sign-out">Sign Out</a>
+         </div>
+        
+        <%} else{%>
+            <div class="title">
+                <a href="/">CODEIAL</a>
+            </div>
+            <div class="in"> 
+                <a href="/users/sign-in">Sign In</a>
+            </div>
+           
+            <div class="up">
+                <a href="/users/sign-up">Sign Up</a>
+            </div>
+            <%}%>
+            
+        </div>
+
+
+</header>

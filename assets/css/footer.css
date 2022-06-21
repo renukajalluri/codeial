@@ -1,0 +1,15 @@
+footer {
+  position: fixed;
+  left: 0;
+  height: 60px;
+  bottom: 0;
+  width: 100%;
+  background-color: antiquewhite;
+  text-align: center;
+  overflow: hidden; }
+  footer h3 {
+    color: #b19595; }
+  footer .footer-codeial {
+    font-size: 10px; }
+  footer .footer-codeial:hover {
+    color: #696060; }

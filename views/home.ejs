@@ -1,0 +1,64 @@
+
+    <link rel="stylesheet" href="/css/home.css">
+    <div id="home-container">
+<section id="feed-posts">
+   
+    <!-- if user is logged in -->
+   <% if(locals.user){ %>     
+   <form action="/posts/create" id="new-post-form" method="post">
+       <h1>Add Posts</h1>
+    <textarea name="content" id="" cols="30" rows="8" placeholder="Type here..."></textarea>
+    <input type="submit" value="Post">
+   </form>
+<% } %>
+
+
+   <div id="post-list-container">
+<ul>
+    <% for(post of posts) {%>
+       
+        <%- include('_post') -%>
+    <%}%>
+
+</ul>
+   </div>
+</section>
+
+
+
+<section id="user_friends">
+    <h4>Friends</h4>
+   <% for(u of all_users){ %>
+    <p>
+     <!-- <%=   u.name%> -->
+        <a href="/users/profile/<%= u.id%>"><%= u.name %></a>
+    </p>
+
+    <%}%>
+
+</section>
+<%- include('_chat_box') -%>
+</div>
+<script src="/js/home_posts.js"></script>
+
+<!-- <script src="../assets/js/toggle_likes.js"></script> -->
+
+<!-- <script>
+    $(".toggle-like-button").each(function(){
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    })
+</script> -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js.map"></script> -->
+<!-- <script src="/socket.io/socket.io.js"></script> -->
+<script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+<script src="/js/chat_engine.js"></script>
+
+<% if(locals.user){ %>
+<script >
+   
+    new ChatEngine('user-chat-box',"<%= locals.user.email %>")
+</script>
+
+<% } %>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="<%= assetPath('css/layout.css') %>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="<%= assetPath('css/layout.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/header.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/footer.css') %>">
+    <!-- <link rel="stylesheet" href=""> -->
+    
+    <%- style %>
+</head>
+<body>
+    <%- include('_header'); %>
+   
+  
+    <main id="layout-main">
+       
+        <%- body %>
+    </main>
+   
+    <%- include('_footer'); %>
+    <%- script %>
+
+    <script>
+        <% if (flash.success && flash.success.length > 0) {%>
+            new Noty({
+                theme: 'relax',
+                text: "<%= flash.success %>",
+                type: 'success',
+                layout: 'topRight',
+                timeout: 1000
+                
+            }).show();    
+        <%} %>
+
+        <% if (flash.error && flash.error.length > 0) {%>
+            new Noty({
+                theme: 'relax',
+                text: "<%= flash.error %>",
+                type: 'error',
+                layout: 'topRight',
+                timeout: 1000
+                
+            }).show();    
+        <%} %>
+    </script>
+
+</body>
+</html>

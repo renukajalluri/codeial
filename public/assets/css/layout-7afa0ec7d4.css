@@ -1,0 +1,54 @@
+ul {
+  list-style-type: none; }
+
+body {
+  margin: 0; }
+  body #layout-main {
+    color: darkgray; }
+  body #feed-posts {
+    display: grid;
+    grid-template-columns: 1fr 2fr; }
+  body #new-post-form {
+    padding: 30px; }
+  body #new-post-form input {
+    border: 2px solid navajowhite;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 50px;
+    color: dimgray; }
+  body .user-name {
+    text-transform: capitalize; }
+  body .post-content {
+    border: 1px solid #fff;
+    box-shadow: 0px 3px 10px rgba(0, 1, 0, 0.2);
+    width: 50%;
+    padding: 10px;
+    color: black; }
+  body .post-comments {
+    margin: 10px; }
+  body .post-comments input[type='text'] {
+    border: 0;
+    border-bottom: 1px solid #d2cbcb;
+    background: transparent; }
+  body .post-comments input:focus {
+    outline: none; }
+  body #comment-button {
+    cursor: pointer;
+    background: transparent;
+    width: 40px;
+    font-size: 10px;
+    border-radius: 5px;
+    border: 1px solid dimgray;
+    color: dimgray; }
+  body .post-comments-list {
+    position: relative;
+    left: -40px; }
+  body .comment {
+    color: dimgray; }
+  body .name-content {
+    margin-top: -5px; }
+  body .fa-circle-user {
+    color: dimgray; }
+  body .name {
+    color: dimgray; }

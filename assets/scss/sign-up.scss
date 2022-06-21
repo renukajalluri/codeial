@@ -1,0 +1,41 @@
+.sign-up{
+    color: rgb(110, 102, 102);
+    margin-top: 80px;
+    text-align: center;
+}
+.form-container{
+    margin-top: 30px;
+     display: flex;
+    
+     justify-content: center;
+   
+   
+    form {
+        
+        display: grid;
+        grid-gap:30px ;
+        grid-auto-rows: 30px;
+       
+    }
+    input{
+        width: 250px;
+        border: 0;
+        outline: none;
+        background: transparent;
+        border-bottom: 2px solid navajowhite;
+    }
+    button{
+        background: transparent;
+        outline: none;
+        border: 2px solid navajowhite;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+    button:hover{
+        background-color: navajowhite;
+        color: whitesmoke;
+        
+    }
+}
+
+
